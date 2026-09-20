@@ -112,7 +112,6 @@ const Team = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
             {[
               { name: 'Pramod Kumar', linkedin: 'https://www.linkedin.com/in/pramod-kumar-2736b4358/' },
-              { name: 'Jagadish Palei', linkedin: 'https://www.linkedin.com/in/jagadish-palei-161040218/' },
               { name: 'Subhashree Patnaik', linkedin: '' },
               { name: 'Arpan Ganguli', linkedin: 'https://www.linkedin.com/in/arpan-ganguli-b6ba17299/' },
               { name: 'Preeti Gupta', linkedin: 'https://www.linkedin.com/in/pg194/' }
@@ -167,6 +166,42 @@ const Team = () => {
                     </a>
                   )}
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Build by */}
+        <div className="anim-team-up" style={{ marginTop: '6rem' }}>
+          <h3 style={{ textAlign: 'center', marginBottom: '3rem', fontSize: '2rem', color: 'rgba(255,255,255,0.9)' }}>Built by</h3>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+            {[
+              { name: 'Pramod Kumar', linkedin: 'https://www.linkedin.com/in/pramod-kumar-2736b4358/' },
+              { name: 'Jagadish Palei', linkedin: 'https://www.linkedin.com/in/jagadish-palei-161040218/' }
+            ].map((member, i) => (
+              <div key={i} className="glass-panel" style={{ padding: '2rem', textAlign: 'center', width: '250px' }}>
+                <div style={{
+                  width: '100px', height: '100px', borderRadius: '50%', background: '#1f2233', margin: '0 auto 1.5rem',
+                  border: '2px solid rgba(0, 123, 255, 0.3)', overflow: 'hidden'
+                }}>
+                  <img
+                    src={`/member's/${member.name}${member.name === 'Pramod Kumar' ? '.jpeg' : '.png'}`}
+                    alt={member.name}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: member.name === 'Pramod Kumar' ? 'center 1%' : 'center'
+                    }}
+                  />
+                </div>
+                <h4 style={{ color: '#fff', fontSize: '1.1rem', marginBottom: '0.25rem' }}>{member.name}</h4>
+                <p style={{ fontSize: '0.85rem', color: 'var(--accent-blue)', marginBottom: '1rem' }}>Web Master</p>
+                {member.linkedin && (
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-blue)', display: 'inline-block' }}>
+                    <LinkedInIcon size={16} />
+                  </a>
+                )}
               </div>
             ))}
           </div>
